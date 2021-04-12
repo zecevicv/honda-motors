@@ -461,6 +461,33 @@ select {
   }
 }
 
+/* #Line
+================================================== */
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #CBCBCB;
+}
+
+.line span {
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  padding: 0 1.8vw;
+}
+
 /* #Header
 ================================================== */
 .header {
@@ -1888,5 +1915,101 @@ select {
   .why-honda-page picture {
     margin-top: 0;
     margin-bottom: -10vw;
+  }
+}
+
+/* #Legend Page
+================================================== */
+.legend-page {
+  padding: 4.5vw 0 8.95vw 0;
+}
+
+.legend-page .container {
+  width: 78%;
+}
+
+.legend-page h2 {
+  text-align: center;
+  margin-bottom: 2.6vw;
+}
+
+.legend-page h3 {
+  margin-bottom: 2.8vw;
+}
+
+.legend-page .legend-group:not(:last-child) {
+  margin-bottom: 5.2vw;
+}
+
+.legend-page .legend-download {
+  text-align: center;
+  margin-top: 7vw;
+}
+
+.legend-page ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2vw;
+  row-gap: 2vw;
+}
+
+.legend-page ul .img img {
+  width: 3.9vw;
+  height: 3.9vw;
+  object-fit: contain;
+  object-position: top right;
+  margin-bottom: .5vw;
+}
+
+.legend-page ul h4 {
+  margin-bottom: .25vw;
+}
+
+@media (max-width: 1023.98px) {
+  .legend-page {
+    padding: 11.33vw 0 19.33vw 0;
+  }
+
+  .legend-page .container {
+    width: 90%;
+  }
+
+  .legend-page h2 {
+    margin-bottom: 6vw;
+  }
+
+  .legend-page h3 {
+    margin-bottom: 6.66vw;
+  }
+
+  .legend-page .legend-group:not(:last-child) {
+    margin-bottom: 11.3vw;
+  }
+
+  .legend-page ul {
+    display: block;
+  }
+
+  .legend-page ul li {
+    display: flex;
+  }
+
+  .legend-page ul li:not(:last-child) {
+    margin-bottom: 8vw;
+  }
+
+  .legend-page ul .img {
+    flex: 0 0 14.6vw;
+    margin-left: 4.66vw;
+  }
+
+  .legend-page ul .img img {
+    width: 14.6vw;
+    height: 14.6vw;
+    margin-bottom: 0;
+  }
+
+  .legend-page .legend-download {
+    margin-top: 19.3vw;
   }
 }
