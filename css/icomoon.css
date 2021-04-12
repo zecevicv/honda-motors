@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../font/icomoon.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-display:swap;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youtube2:before {
+  content: "\e920";
+}
+.icon-acc:before {
+  content: "\e900";
+}
+.icon-arrowB:before {
+  content: "\e901";
+}
+.icon-arrowB2:before {
+  content: "\e902";
+}
+.icon-arrowL:before {
+  content: "\e903";
+}
+.icon-arrowL2:before {
+  content: "\e904";
+}
+.icon-arrowR:before {
+  content: "\e905";
+}
+.icon-arrowR2:before {
+  content: "\e906";
+}
+.icon-arrowT:before {
+  content: "\e907";
+}
+.icon-arrowT2:before {
+  content: "\e908";
+}
+.icon-calendar:before {
+  content: "\e909";
+}
+.icon-cart:before {
+  content: "\e90a";
+}
+.icon-close:before {
+  content: "\e90b";
+}
+.icon-crown:before {
+  content: "\e90c";
+}
+.icon-facebook:before {
+  content: "\e90d";
+}
+.icon-facebookC:before {
+  content: "\e90e";
+}
+.icon-instagram:before {
+  content: "\e90f";
+}
+.icon-location:before {
+  content: "\e910";
+}
+.icon-lopa:before {
+  content: "\e911";
+}
+.icon-mailC:before {
+  content: "\e912";
+}
+.icon-medal:before {
+  content: "\e913";
+}
+.icon-menu:before {
+  content: "\e914";
+}
+.icon-percentage:before {
+  content: "\e915";
+}
+.icon-rotateL:before {
+  content: "\e916";
+}
+.icon-rotateR:before {
+  content: "\e917";
+}
+.icon-shear:before {
+  content: "\e918";
+}
+.icon-site:before {
+  content: "\e919";
+}
+.icon-tringleB:before {
+  content: "\e91a";
+}
+.icon-tringleL:before {
+  content: "\e91b";
+}
+.icon-tringleR:before {
+  content: "\e91c";
+}
+.icon-tringleT:before {
+  content: "\e91d";
+}
+.icon-whatsappC:before {
+  content: "\e91e";
+}
+.icon-youtube:before {
+  content: "\e91f";
+}
