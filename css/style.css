@@ -303,6 +303,14 @@ select {
   margin-right: 3.125vw;
 }
 
+.btn-icon {
+  width: 1vw;
+  height: 1vw;
+  object-fit: contain;
+  object-position: center;
+  margin-right: .25vw;
+}
+
 .link {
   color: var(--red);
   font-size: 1.15vw;
@@ -945,6 +953,7 @@ select {
   position: relative;
   z-index: 10;
   margin-bottom: 5.2vw;
+  color: white;
 }
 
 .footer-contact-top {
@@ -962,9 +971,12 @@ select {
   margin-bottom: 2.6vw;
 }
 
+.footer-contact .form-top > * {
+  flex-grow: 1;
+}
+
 .footer-contact .form-top > *:not(:last-child) {
   margin-left: 1.56vw;
-  flex-grow: 1;
 }
 
 .footer-contact .form input[type="text"] {
@@ -978,6 +990,24 @@ select {
 
 .footer-contact .form input[type="text"]::placeholder {
   color: white;
+}
+
+.footer-contact .form select {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  height: 1.8vw;
+}
+
+.footer-contact .form option {
+  color: black;
+}
+
+.footer-contact .form textarea {
+  color: white;
+  padding: .5vw;
 }
 
 .footer-contact .form-bottom {
@@ -1164,7 +1194,8 @@ select {
     margin-bottom: 3vw;
   }
 
-  .footer-contact .form input[type="text"] {
+  .footer-contact .form input[type="text"],
+  .footer-contact .form select {
     height: 8vw;
   }
 
@@ -2370,5 +2401,140 @@ select {
 
   .contact-us-page .form-bottom textarea {
     padding: 2vw;
+  }
+}
+
+/* #Catalogue Banner
+================================================== */
+.banner-catalogue .form {
+  display: flex;
+}
+
+.banner-catalogue .form select {
+  min-width: 21vw;
+  border: none;
+  padding: 0 .5vw;
+  margin-left: 1vw;
+}
+
+@media (max-width: 1023.98px) {
+  .banner-catalogue .form {
+    display: block;
+  }
+
+  .banner-catalogue .form > * {
+    width: 100%;
+  }
+
+  .banner-catalogue .form select {
+    min-width: 0;
+    padding: 0 1vw;
+    margin-left: 0;
+    height: 11.33vw;
+    margin-bottom: 4vw;
+  }
+
+  .banner-catalogue p {
+    margin-bottom: 3vw;
+  }
+}
+
+/* #Catalogue Page
+================================================== */
+.catalogue-page .container {
+  width: 78%;
+}
+
+.catalogue-page .footer-contact {
+  margin-bottom: 7.8vw;
+  margin-top: -3.125vw;
+}
+
+.catalogue-page .form-bottom .form-group:first-child {
+  width: 73.5%;
+}
+
+.catalogue-page .form-bottom .form-group:last-child {
+  width: 20%;
+}
+
+.catalogue-page .form-bottom .form-group:last-child .btn {
+  width: 100%;
+  margin-top: 1.71vw;
+}
+
+.catalogue-page .form-bottom label {
+  display: block;
+  margin-bottom: .3vw;
+}
+
+.catalogue-page .form-bottom textarea {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  border: 1px solid white;
+  margin-bottom: 1.3vw;
+}
+
+.catalogue-page .form-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 4.5vw;
+}
+
+.catalogue-page .form-top > * {
+  margin: 0!important;
+}
+
+@media (max-width: 1023.98px) {
+  .catalogue-page .container {
+    width: 90%;
+  }
+
+  .catalogue-page .footer-contact {
+    margin-bottom: 19.3vw;
+    margin-top: -11.3vw;
+  }
+
+  .catalogue-page .form-top {
+    display: block;
+    margin-bottom: 3vw;
+  }
+
+  .catalogue-page .footer-contact .form-top > *:not(:last-child) {
+    margin-left: 0;
+    margin-bottom: 3vw!important;
+  }
+
+  .catalogue-page .form-bottom .form-group:first-child {
+    width: 100%;
+  }
+  
+  .catalogue-page .form-bottom .form-group:last-child {
+    width: 100%;
+  }
+
+  .catalogue-page .form-bottom label {
+    margin-bottom: 1vw;
+  }
+
+  .catalogue-page .form-bottom textarea {
+    margin-bottom: 4.66vw;
+  }
+
+  .footer-contact .form-bottom .form-group:first-child {
+    margin-bottom: 8.66vw;
+  }
+}
+
+/* #Catalogue Footer
+================================================== */
+.footer-catalogue .footer-main {
+  margin-top: 8.33vw;
+}
+
+@media (max-width: 1023.98px) {
+  .footer-catalogue .footer-main {
+    margin-top: 19.33vw;
   }
 }
