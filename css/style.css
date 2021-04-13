@@ -2013,3 +2013,130 @@ select {
     margin-top: 19.3vw;
   }
 }
+
+/* #About Us Page
+================================================== */
+.about-us-page {
+  background-image: url('../img/global/selected-products-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 4.4vw 0 21.8vw 0;
+  text-align: center;
+}
+
+.about-us-page h2 {
+  line-height: 1;
+}
+
+.about-us-page p {
+  max-width: 43%;
+  margin: 0 auto 1vw auto;
+}
+
+.about-us-page .img {
+  margin: 0 auto;
+  width: 58%;
+}
+
+.about-us-page .img img {
+  width: 100%;
+}
+
+@media (max-width: 1023.98px) {
+  .about-us-page {
+    padding: 11.3vw 0 17.3vw 0;
+  }
+
+  .about-us-page h2 {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-us-page p {
+    max-width: 90%;
+    margin: 0 auto 9.6vw auto;
+  }
+
+  .about-us-page .img {
+    width: 90%;
+  }
+}
+
+/* #Video Slider
+================================================== */
+.video-slider {
+  text-align: center;
+  padding-bottom: 7.55vw;
+  margin-top: -14.5vw;
+}
+
+.video-slider h2 {
+  line-height: 1;
+}
+
+.video-slider p {
+  max-width: 60%;
+  margin: 0 auto 7.8vw auto;
+}
+
+.video-slider .swiper-slide {
+  padding: 0 1.56vw;
+}
+
+.video-slider .swiper-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  margin-top: 3.125vw;
+}
+
+.video-slider .swiper-button-next, 
+.video-slider .swiper-button-prev {
+  position: static;
+  color: white;
+  margin-top: 0;
+  background-color: var(--red);
+  width: 2.8vw;
+  height: 2.8vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+.video-slider .swiper-button-next:after, 
+.video-slider .swiper-button-prev:after {
+  font-size: 150%;
+}
+
+@media (max-width: 1023.98px) {
+  .video-slider {
+    padding-bottom: 19.3vw;
+    margin-top: 0;
+  }
+
+  .video-slider h2 {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .video-slider p {
+    max-width: 90%;
+    margin: 0 auto 9.33vw auto;
+  }
+
+  .video-slider .swiper-slide {
+    padding: 0 1.13vw;
+  }
+
+  .video-slider .swiper-arrows {
+    margin-top: 8vw;
+  }
+
+  .video-slider .swiper-button-next, 
+  .video-slider .swiper-button-prev {
+    width: 10.6vw;
+    height: 10.6vw;
+  }
+}

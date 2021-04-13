@@ -92,17 +92,25 @@ new Swiper('.banner-slider .swiper-container', {
   },
 });
 
-/* #Selected Products Slider
+/* #Video Slider
     ======================================================= */
-// new Swiper('.selected-products .swiper-container', {
-//   loop: true,
-//   slidesPerView: 4.5,
-//   centeredSlides: true,
-//   navigation: {
-//     nextEl: '.selected-products .swiper-button-next',
-//     prevEl: '.selected-products .swiper-button-prev',
-//   },
-// });
+new Swiper('.video-slider .swiper-container', {
+  loop: true,
+  slidesPerView: 2,
+  centeredSlides: true,
+  navigation: {
+    nextEl: '.video-slider .swiper-button-next',
+    prevEl: '.video-slider .swiper-button-prev',
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1.1
+    },
+    1024: {
+      slidesPerView: 2
+    }
+  },
+});
 
 /* #Popular Products Slider
 ======================================================= */
