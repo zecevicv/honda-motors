@@ -2568,10 +2568,16 @@ select {
 }
 
 .category-page .category-products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 3.125vw;
-  column-gap: 3.125vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+  margin: -1.56vw;
+}
+
+.category-page .category-products li {
+  padding: 1.56vw;
+  flex: 0 0 25%;
 }
 
 .category-page .category-navigation ul {
@@ -2621,13 +2627,96 @@ select {
   }
 
   .category-page .category-navigation ul li:not(:last-child) {
-    margin-left: 8vw;
+    margin-left: 5vw;
   }
 
   .category-page .category-products {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 8vw;
-    column-gap: 5.33vw;
+    margin: -4vw -2.6vw;
+  }
+
+  .category-page .category-products li {
+    padding: 4vw 2.6vw;
+    flex: 0 0 50%;
+  }
+}
+
+/* #Category Generators
+================================================== */
+.category-generators {
+  margin-top: 6.7vw;
+}
+
+.category-generators .container {
+  width: 78%;
+}
+
+.category-generators-download {
+  text-align: center;
+  margin-bottom: 6.7vw;
+}
+
+.category-generators h3 {
+  text-align: center;
+  margin-bottom: 2vw;
+  line-height: 1.2;
+}
+
+.category-generators ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1vw -1.56vw;
+}
+
+.category-generators ul li {
+  flex: 0 0 50%;
+  padding: 1vw 1.56vw;
+}
+
+.category-generators ul .underline {
+  margin-bottom: .5vw;
+}
+
+.category-generators ul .underline::after {
+  width: 1.3vw;
+}
+
+@media (max-width: 1023.98px) {
+  .category-generators {
+    margin-top: 17.3vw;
+  }
+  
+  .category-generators .container {
+    width: 90%;
+  }
+  
+  .category-generators-download {
+    margin-bottom: 17.3vw;
+  }
+  
+  .category-generators h3 {
+    margin-bottom: 6.66vw;
+  }
+  
+  .category-generators ul {
+    display: block;
+    margin: 0;
+  }
+  
+  .category-generators ul li {
+    padding: 0;
+  }
+
+  .category-generators ul li:not(:last-child) {
+    margin-bottom: 8vw;
+  }
+  
+  .category-generators ul .underline {
+    margin-bottom: 1vw;
+    padding-bottom: 0;
+  }
+  
+  .category-generators ul .underline::after {
+    display: none;
   }
 }
 
