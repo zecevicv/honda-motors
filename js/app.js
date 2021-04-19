@@ -192,4 +192,89 @@ window.addEventListener('load', () => {
     },
     grabCursor: true,
   });
+
+  /* #Compare Products
+  ======================================================= */
+  // Swiper for Table
+  new Swiper('.compare-products .swiper-container', {
+    slidesPerView: 'auto',
+    freeMode: true,
+    navigation: {
+      nextEl: '.compare-products .swiper-button-next',
+      prevEl: '.compare-products .swiper-button-prev',
+    },
+  });
+
+  // Sidebar and Product Collapse
+  const sidebarCollapseGroups = document.querySelectorAll('.compare-products .sidebar .collapse-group');
+  const products = document.querySelectorAll('.compare-products .product');
+
+  const addTopMarginToProductCollapseGroups = (sidebarCollapseGroup) => {
+    // Add top margin to product due to collapse toggler height on sidebar
+    const sidebarCollapseToggler = sidebarCollapseGroup.querySelector('.collapse-toggler');
+    products.forEach((product) => {
+      const productCollapseGroups = product.querySelectorAll('.collapse-group');
+      productCollapseGroups.forEach((productCollapseGroup) => {
+        productCollapseGroup.style.marginTop = sidebarCollapseToggler.getBoundingClientRect().height + 'px';
+      });
+    });
+  }
+
+  sidebarCollapseGroups.forEach((sidebarCollapseGroup, index1) => {
+    addTopMarginToProductCollapseGroups(sidebarCollapseGroup);
+
+    sidebarCollapseGroup.addEventListener('click', (e) => {
+      if (e.target.closest('.collapse-toggler')) {
+        products.forEach((product) => {
+          const productCollapseGroups = product.querySelectorAll('.collapse-group');
+          productCollapseGroups.forEach((productCollapseGroup, index2) => {
+            if (index1 == index2) {
+              // Toggle product collapse
+              productCollapseGroup.classList.toggle('show');
+
+              // Set the same cell height on sidebar and product
+              const sidebarItems = sidebarCollapseGroup.querySelectorAll('li');
+              const productItems = productCollapseGroup.querySelectorAll('li');
+              
+              sidebarItems.forEach((sidebarItem, index3) => {
+                productItems[index3].style.height = sidebarItem.getBoundingClientRect().height + 'px';
+              });
+            }
+          })
+        });
+      }
+    });
+  });
+
+  // Set the same cell height on sidebar and product
+  if (
+    document.querySelector('.compare-products .table .show')
+    &&
+    document.querySelector('.compare-products .sidebar .show')
+  ) {
+    const sidebarItems = document.querySelectorAll('.compare-products .sidebar .show li');
+    
+    products.forEach((product) => {
+      const productItems = product.querySelectorAll('li');
+      sidebarItems.forEach((sidebarItem, index) => {
+        productItems[index].style.height = sidebarItem.getBoundingClientRect().height + 'px';
+      });
+    });
+  }
+
+  window.addEventListener('resize', (e) => {
+    const sidebarItems = document.querySelectorAll('.compare-products .sidebar .show li');
+    
+    products.forEach((product) => {
+      const productItems = product.querySelectorAll('li');
+      sidebarItems.forEach((sidebarItem, index) => {
+        productItems[index].style.height = sidebarItem.getBoundingClientRect().height + 'px';
+      });
+    });
+
+    sidebarCollapseGroups.forEach((sidebarCollapseGroup) => {
+      addTopMarginToProductCollapseGroups(sidebarCollapseGroup);
+    });
+  });
+
 });
