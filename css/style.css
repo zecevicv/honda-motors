@@ -721,10 +721,6 @@ select {
     justify-content: center;
   }
 
-  .header .collapse {
-    padding: 2.6vw;
-  }
-
   .header .collapse-toggler i {
     margin-right: 1vw;
   }
@@ -811,6 +807,69 @@ select {
   .header .icon-lopa {
     font-size: 100%;
     margin-right: 1vw;
+  }
+
+  /* Header Categories */
+  .header-categories .collapsible {
+    position: static;
+  }
+
+  .header-categories .collapse {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 15.3vw + 1px);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    background-color: white;
+    color: black;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    transform: none;
+    border-top: 1px solid #e3e3e3;
+  }
+
+  .header-categories.show .collapse {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header-categories .links ul {
+    display: flex;
+  }
+
+  .header-categories .links ul li:not(:last-child)::after {
+    content: '/';
+    margin: 0 1.34vw;
+  }
+
+  .header-categories .links a {
+    text-decoration: underline;
+  }
+
+  .header-category>a {
+    line-height: 1.4;
+  }
+
+  .header-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5.34vw 0;
+    border-bottom: 1px solid #e3e3e3;
+  }
+
+  .header-category .img {
+    width: 61.42vw;
+  }
+
+  .header-category .img img {
+    width: 100%;
   }
 }
 
