@@ -3476,7 +3476,7 @@ select {
 
 .compare-table .row-top {
   position: sticky;
-  top: 50%;
+  top: 75%;
   left: 0;
   z-index: 110;
   margin-bottom: 10px;
