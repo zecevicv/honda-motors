@@ -3479,6 +3479,7 @@ select {
   top: 50%;
   left: 0;
   z-index: 110;
+  margin-bottom: 10px;
 }
 
 .compare-table .row-bottom {
@@ -3692,6 +3693,10 @@ select {
   .compare-table .row-bottom {
     padding-right: 0;
     position: relative;
+  }
+
+  .compare-table .row-top {
+    margin-bottom: 0;
   }
 
   /* Sidebar */
