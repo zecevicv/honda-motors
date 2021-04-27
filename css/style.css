@@ -3423,6 +3423,10 @@ select {
 
 /* #Compare Products Page
 ================================================== */
+.compare-products-page {
+  overflow-x: hidden;
+}
+
 .compare-products-page .header {
   color: black !important;
 }
@@ -3467,10 +3471,20 @@ select {
 /* #Compare Table
 ================================================== */
 .compare-table {
+  position: relative;
+}
+
+.compare-table .row-top {
+  position: sticky;
+  top: 50%;
+  left: 0;
+  z-index: 110;
+}
+
+.compare-table .row-bottom {
   padding-right: 5.1vw;
   display: flex;
   align-items: flex-start;
-  overflow: hidden;
 }
 
 /* Sidebar */
@@ -3637,6 +3651,18 @@ select {
   height: auto;
 }
 
+.compare-products .swiper-arrows-wrapper {
+  width: 80.7%;
+  margin-right: auto;
+}
+
+.compare-products .swiper-arrows {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .compare-products .swiper-button-next,
 .compare-products .swiper-button-prev {
   color: white;
@@ -3645,6 +3671,8 @@ select {
   width: 2.8vw;
   height: 2.8vw;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  position: static;
+  transform: rotate(180deg);
 }
 
 .compare-products .swiper-button-next:after,
@@ -3652,16 +3680,16 @@ select {
   font-size: 150%;
 }
 
-.compare-products .swiper-container-rtl .swiper-button-next {
-  left: 0;
-}
-
-.compare-products .swiper-container-rtl .swiper-button-prev {
+.compare-products .swiper-button-next {
   right: 0;
 }
 
+.compare-products .swiper-button-prev {
+  left: 0;
+}
+
 @media (max-width: 1023.98px) {
-  .compare-table {
+  .compare-table .row-bottom {
     padding-right: 0;
     position: relative;
   }
@@ -3690,7 +3718,7 @@ select {
     top: 0;
     right: 0;
     height: calc(100% + 2px);
-    width: 500%;
+    width: 99.5vw;
     background-color: #D5D5D5;
     z-index: -1;
   }
@@ -3723,6 +3751,10 @@ select {
     min-width: 21.3vw;
   }
 
+  .compare-products .swiper-arrows-wrapper {
+    width: 100%;
+  }
+
   .compare-products .swiper-arrows {
     display: flex;
     flex-direction: row-reverse;
@@ -3731,12 +3763,7 @@ select {
     background-color: white;
     box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
     padding: 1vw 0;
-
-    position: absolute;
-    top: 50%;
-    left: 0;
     width: 100%;
-    z-index: 100;
   }
 
   .compare-products .swiper-button-next,
