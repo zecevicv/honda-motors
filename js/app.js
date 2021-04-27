@@ -81,129 +81,145 @@ if (collapsibles) {
 window.addEventListener('load', () => {
   /* #Banner Slider
     ======================================================= */
-  new Swiper('.banner-slider .swiper-container', {
-    effect: 'fade',
-    loop: true,
-    pagination: {
-      el: '.banner-slider .swiper-pagination',
-      type: 'fraction',
-    },
-    navigation: {
-      nextEl: '.banner-slider .swiper-button-next',
-      prevEl: '.banner-slider .swiper-button-prev',
-    },
-  });
+  if (document.querySelector('.banner-slider .swiper-container')) {
+    new Swiper('.banner-slider .swiper-container', {
+      effect: 'fade',
+      loop: true,
+      pagination: {
+        el: '.banner-slider .swiper-pagination',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.banner-slider .swiper-button-next',
+        prevEl: '.banner-slider .swiper-button-prev',
+      },
+    });
+  }
 
   /* #Video Slider
       ======================================================= */
-  new Swiper('.video-slider .swiper-container', {
-    loop: true,
-    slidesPerView: 2,
-    centeredSlides: true,
-    navigation: {
-      nextEl: '.video-slider .swiper-button-next',
-      prevEl: '.video-slider .swiper-button-prev',
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.1
-      },
-      1024: {
-        slidesPerView: 2
-      }
-    },
-  });
-
-  /* #Popular Products Slider
-======================================================= */
-  const popularProductsTopSlider = new Swiper('#popularProductsTopSlider', {
-    slidesPerView: 5,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    allowTouchMove: false,
-    breakpoints: {
-      0: {
-        slidesPerView: 4,
-        allowTouchMove: true,
-        spaceBetween: 30
-      },
-      1024: {
-        slidesPerView: 8,
-        allowTouchMove: false,
-      }
-    },
-    navigation: {
-      nextEl: '#popularProductsTopSlider .swiper-button-next',
-      prevEl: '#popularProductsTopSlider .swiper-button-prev',
-    },
-  });
-
-  const popularProductsBottomSlider = new Swiper('#popularProductsBottomSlider', {
-    slidesPerView: 1,
-    thumbs: {
-      swiper: popularProductsTopSlider
-    },
-    noSwiping: true,
-    allowTouchMove: false,
-    effect: 'fade',
-    speed: 500
-  });
-
-  // Init child sliders
-  const popularProductsSlidesNum = document.querySelectorAll('#popularProductsBottomSlider > .swiper-wrapper > .swiper-slide');
-  popularProductsSlidesNum.forEach((slide, index) => {
-    let i = index + 1;
-    new Swiper('#popularProductsProductSlider' + i, {
-      slidesPerView: 4.5,
-      centeredSlides: true,
+  if (document.querySelector('.video-slider .swiper-container')) {
+    new Swiper('.video-slider .swiper-container', {
       loop: true,
+      slidesPerView: 2,
+      centeredSlides: true,
       navigation: {
-        nextEl: '#popularProductsProductSlider' + i + ' .swiper-button-next',
-        prevEl: '#popularProductsProductSlider' + i + ' .swiper-button-prev',
+        nextEl: '.video-slider .swiper-button-next',
+        prevEl: '.video-slider .swiper-button-prev',
       },
       breakpoints: {
         0: {
-          slidesPerView: 1.5
+          slidesPerView: 1.1
         },
         1024: {
-          slidesPerView: 4.5
+          slidesPerView: 2
         }
-      }
+      },
     });
-  });
+  }
+
+  /* #Popular Products Slider
+======================================================= */
+  if (document.querySelector('#popularProductsTopSlider')) {
+    const popularProductsTopSlider = new Swiper('#popularProductsTopSlider', {
+      slidesPerView: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      allowTouchMove: false,
+      breakpoints: {
+        0: {
+          slidesPerView: 4,
+          allowTouchMove: true,
+          spaceBetween: 30
+        },
+        1024: {
+          slidesPerView: 8,
+          allowTouchMove: false,
+        }
+      },
+      navigation: {
+        nextEl: '#popularProductsTopSlider .swiper-button-next',
+        prevEl: '#popularProductsTopSlider .swiper-button-prev',
+      },
+    });
+  }
+
+  if (document.querySelector('#popularProductsBottomSlider')) {
+    const popularProductsBottomSlider = new Swiper('#popularProductsBottomSlider', {
+      slidesPerView: 1,
+      thumbs: {
+        swiper: popularProductsTopSlider
+      },
+      noSwiping: true,
+      allowTouchMove: false,
+      effect: 'fade',
+      speed: 500
+    });
+  }
+
+  // Init child sliders
+  if (document.querySelector('#popularProductsBottomSlider > .swiper-wrapper > .swiper-slide')) {
+    const popularProductsSlidesNum = document.querySelectorAll('#popularProductsBottomSlider > .swiper-wrapper > .swiper-slide');
+    popularProductsSlidesNum.forEach((slide, index) => {
+      let i = index + 1;
+      new Swiper('#popularProductsProductSlider' + i, {
+        slidesPerView: 4.5,
+        centeredSlides: true,
+        loop: true,
+        navigation: {
+          nextEl: '#popularProductsProductSlider' + i + ' .swiper-button-next',
+          prevEl: '#popularProductsProductSlider' + i + ' .swiper-button-prev',
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.5
+          },
+          1024: {
+            slidesPerView: 4.5
+          }
+        }
+      });
+    });
+  }
 
   /* #Product Page Gallery Slider
   ======================================================= */
-  const thumbs = new Swiper('.product-thumbs .swiper-container', {
-    direction: 'vertical',
-    slidesPerView: 5,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    freeMode: true,
-  });
+  if (document.querySelector('.product-thumbs .swiper-container')) {
+    const thumbs = new Swiper('.product-thumbs .swiper-container', {
+      direction: 'vertical',
+      slidesPerView: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      freeMode: true,
+    });
+  }
 
-  const gallery = new Swiper('.product-gallery .swiper-container', {
-    thumbs: {
-      swiper: thumbs,
-    },
-    effect: 'fade',
-    pagination: {
-      el: '.product-gallery .swiper-pagination',
-    },
-    grabCursor: true,
-  });
+  if (document.querySelector('.product-gallery .swiper-container')) {
+    const gallery = new Swiper('.product-gallery .swiper-container', {
+      thumbs: {
+        swiper: thumbs,
+      },
+      effect: 'fade',
+      pagination: {
+        el: '.product-gallery .swiper-pagination',
+      },
+      grabCursor: true,
+    });
+  }
 
   /* #Compare Products
   ======================================================= */
   // Swiper for Table
-  new Swiper('.compare-products .swiper-container', {
-    slidesPerView: 'auto',
-    freeMode: true,
-    navigation: {
-      nextEl: '.compare-products .swiper-button-next',
-      prevEl: '.compare-products .swiper-button-prev',
-    },
-  });
+  if (document.querySelector('.compare-products .swiper-container')) {
+    new Swiper('.compare-products .swiper-container', {
+      slidesPerView: 'auto',
+      freeMode: true,
+      navigation: {
+        nextEl: '.compare-products .swiper-button-next',
+        prevEl: '.compare-products .swiper-button-prev',
+      },
+    });
+  }
 
   // Sidebar and Product Collapse
   const sidebarCollapseGroups = document.querySelectorAll('.compare-products .sidebar .collapse-group');
@@ -235,7 +251,7 @@ window.addEventListener('load', () => {
               // Set the same cell height on sidebar and product
               const sidebarItems = sidebarCollapseGroup.querySelectorAll('li');
               const productItems = productCollapseGroup.querySelectorAll('li');
-              
+
               sidebarItems.forEach((sidebarItem, index3) => {
                 productItems[index3].style.height = sidebarItem.getBoundingClientRect().height + 'px';
               });
@@ -248,12 +264,11 @@ window.addEventListener('load', () => {
 
   // Set the same cell height on sidebar and product
   if (
-    document.querySelector('.compare-products .table .show')
-    &&
+    document.querySelector('.compare-products .table .show') &&
     document.querySelector('.compare-products .sidebar .show')
   ) {
     const sidebarItems = document.querySelectorAll('.compare-products .sidebar .show li');
-    
+
     products.forEach((product) => {
       const productItems = product.querySelectorAll('li');
       sidebarItems.forEach((sidebarItem, index) => {
@@ -264,7 +279,7 @@ window.addEventListener('load', () => {
 
   window.addEventListener('resize', (e) => {
     const sidebarItems = document.querySelectorAll('.compare-products .sidebar .show li');
-    
+
     products.forEach((product) => {
       const productItems = product.querySelectorAll('li');
       sidebarItems.forEach((sidebarItem, index) => {
