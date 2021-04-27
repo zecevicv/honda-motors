@@ -1423,6 +1423,7 @@ select {
   margin: 0 auto 3.125vw auto;
   width: 46%;
   text-align: center;
+  user-select: none;
 }
 
 .selected-products .slider-top .swiper-wrapper {
