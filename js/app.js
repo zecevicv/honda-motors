@@ -120,8 +120,9 @@ window.addEventListener('load', () => {
 
   /* #Popular Products Slider
 ======================================================= */
+  let popularProductsTopSlider = '';
   if (document.querySelector('#popularProductsTopSlider')) {
-    const popularProductsTopSlider = new Swiper('#popularProductsTopSlider', {
+    popularProductsTopSlider = new Swiper('#popularProductsTopSlider', {
       slidesPerView: 5,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
@@ -145,7 +146,7 @@ window.addEventListener('load', () => {
   }
 
   if (document.querySelector('#popularProductsBottomSlider')) {
-    const popularProductsBottomSlider = new Swiper('#popularProductsBottomSlider', {
+    let popularProductsBottomSlider = new Swiper('#popularProductsBottomSlider', {
       slidesPerView: 1,
       thumbs: {
         swiper: popularProductsTopSlider
@@ -184,8 +185,9 @@ window.addEventListener('load', () => {
 
   /* #Product Page Gallery Slider
   ======================================================= */
+  let thumbs = '';
   if (document.querySelector('.product-thumbs .swiper-container')) {
-    const thumbs = new Swiper('.product-thumbs .swiper-container', {
+    thumbs = new Swiper('.product-thumbs .swiper-container', {
       direction: 'vertical',
       slidesPerView: 5,
       watchSlidesVisibility: true,
@@ -194,8 +196,9 @@ window.addEventListener('load', () => {
     });
   }
 
+  let gallery = '';
   if (document.querySelector('.product-gallery .swiper-container')) {
-    const gallery = new Swiper('.product-gallery .swiper-container', {
+    gallery = new Swiper('.product-gallery .swiper-container', {
       thumbs: {
         swiper: thumbs,
       },
