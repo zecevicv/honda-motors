@@ -4016,3 +4016,11 @@ select {
     margin-bottom: 6vw;
   }
 }
+
+.small-banner {
+  display: none;
+}
+
+.footer {
+  margin-top: 5vw;
+}
